@@ -18,7 +18,7 @@ const updaters = [
   {
     actionType: "eosio.token::transfer",
     updater: updateTransferData,
-  },
+  }
 ]
 
 module.exports = updaters

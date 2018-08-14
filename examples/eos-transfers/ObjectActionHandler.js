@@ -12,6 +12,7 @@ class ObjectActionHandler extends AbstractActionHandler {
   }
 
   async updateIndexState(stateObj, block) {
+    console.log(block)
     stateObj.indexState.blockNumber = block.blockNumber
     stateObj.indexState.blockHash = block.blockHash
   }

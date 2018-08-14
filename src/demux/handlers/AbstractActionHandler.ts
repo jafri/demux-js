@@ -26,7 +26,10 @@ export abstract class AbstractActionHandler {
     isReplay: boolean = false,
   ): Promise<[boolean, number]> {
     if (isRollback) {
-      await this.rollbackTo(block.blockNumber - 1)
+      console.log(this.lastProcessedBlockNumber)
+      console.log(block)
+      console.log('SHOULD HANDLE ROLLBACK!')
+      // await this.rollbackTo(block.blockNumber - 1)
     }
 
     if (!this.lastProcessedBlockHash && this.lastProcessedBlockNumber === 0) {

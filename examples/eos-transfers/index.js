@@ -13,14 +13,14 @@ const actionHandler = new ObjectActionHandler(
 )
 
 const actionReader = new NodeosActionReader(
-  "http://mainnet.eoscalgary.io", // Thanks EOS Calgary!
-  0, // Start at most recent blocks
+  "https://history.eoscalgary.io/",
+  0,
 )
 
 const actionWatcher = new BaseActionWatcher(
   actionReader,
   actionHandler,
-  500,
+  250,
 )
 
 actionWatcher.watch()

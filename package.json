@@ -36,6 +36,7 @@
   "scripts": {
     "compile": "tsc",
     "watch": "tsc -w",
+    "dev": "node examples/eos-transfers/index.js",
     "example": "./run-example.sh",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "test": "jest",

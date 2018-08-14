@@ -3,16 +3,22 @@ import { EosAction } from "./interfaces"
 
 export class NodeosBlock implements Block {
   public actions: EosAction[]
+  public actionCount: number
   public blockHash: string
   public blockNumber: number
   public previousBlockHash: string
   public timestamp: Date
+  public producer: string
+
   constructor(rawBlock: any) {
-    this.actions = this.collectActionsFromBlock(rawBlock)
+    let actions = this.collectActionsFromBlock(rawBlock)
+    this.actions = actions
+    this.actionCount = actions.length
     this.blockNumber = rawBlock.block_num
     this.blockHash = rawBlock.id
     this.previousBlockHash = rawBlock.previous
     this.timestamp = new Date(rawBlock.timestamp)
+    this.producer = rawBlock.producer
   }
 
   protected collectActionsFromBlock(rawBlock: any): EosAction[] {
